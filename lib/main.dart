@@ -1,8 +1,5 @@
-import 'package:click_click/screen/auth/signinscreen/components/signin_screen.dart';
-import 'package:click_click/screen/auth/signinscreen/components/widgets/signin_with_gmail.dart';
 import 'package:click_click/themes/app_theme.dart';
-import 'package:click_click/widgets/custom_textfiels.dart';
-import 'package:click_click/widgets/event_image_card.dart';
+import 'package:click_click/widgets/custome_app_bar.dart';
 import 'package:click_click/widgets/other_image_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,30 +35,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100], // Optional background
-      body: Center(
-        child: Column(
-          children: [
-            OtherImageCard(
-              eventName: "eventName",
-              location: "location",
-              dateTime: "dateTime",
-            ),
-              OtherImageCard(
-              eventName: "eventName",
-              location: "location",
-              dateTime: "dateTime",
-            ),  OtherImageCard(
-              eventName: "eventName",
-              location: "location",
-              dateTime: "dateTime",
-            ),  OtherImageCard(
-              eventName: "eventName",
-              location: "location",
-              dateTime: "dateTime",
-            ),
-          ],
-        ), //  Centered Event Card
-      ),
+      body: CustomAppBar(title: 'Events', leading: Icon(Icons.menu),),
     );
   }
 }
