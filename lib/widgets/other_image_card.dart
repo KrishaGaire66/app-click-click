@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:click_click/export.dart';
 
 class OtherImageCard extends StatelessWidget {
   // It's good practice to make properties for dynamic data
@@ -43,13 +43,15 @@ class NewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: pureWhite,
       // The margin ensures space around the card, preventing it from touching screen edges
-      margin: EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 8.0,
-      ), // Adjust vertical margin as needed
+      // margin: EdgeInsets.symmetric(
+      //   horizontal: 16.0,
+      //   vertical: 8.0,
+      // ), // Adjust vertical margin as needed
+      shadowColor: Colors.transparent,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      elevation: 4.0,
+
       child: Row(
         crossAxisAlignment:
             CrossAxisAlignment.start, // Align content to the top
@@ -59,55 +61,56 @@ class NewWidget extends StatelessWidget {
             width: 100,
             height: 112,
             decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(8.0),
+              color: mutedGray.withValues(alpha: 0.3),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(8.0),
+                bottomLeft: Radius.circular(8.0),
+              ),
             ),
             child: imageUrl != null && imageUrl!.isNotEmpty
                 ? ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(8.0),
+                      bottomLeft: Radius.circular(8.0),
+                    ),
                     child: Image.network(
                       imageUrl!,
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
                         return Center(
-                          child: Icon(
-                            Icons.broken_image,
-                            color: Colors.grey[600],
-                          ),
+                          child: Icon(Icons.broken_image, color: mutedGray),
                         );
                       },
                     ),
                   )
                 : Center(
-                    child: Text(
-                      '100x112',
-                      style: TextStyle(color: Colors.grey[600]),
-                    ),
+                    child: Text('100x112', style: TextStyle(color: mutedGray)),
                   ),
           ),
           SizedBox(width: 16.0), // Space between image and text
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 8.0),
               Text(
                 eventName,
                 style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF333366), // A dark blue color
+                  fontSize: 16.0,
+
+                  color: black, // A dark blue color
                 ),
               ),
               SizedBox(height: 4.0),
               Text(
                 location,
-                style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
+                style: TextStyle(fontSize: 12.0, color: mutedGray),
               ),
-              SizedBox(height: 8.0),
+              SizedBox(height: 5.0),
               Text(
                 dateTime,
                 style: TextStyle(
-                  fontSize: 14.0,
-                  color: Colors.red,
+                  fontSize: 12.0,
+                  color: neutralRed,
                   fontWeight: FontWeight.w500,
                 ),
               ),

@@ -21,14 +21,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
 
   @override
-Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: pureWhite,
-      elevation: 3,
-      leading: leading ?? // Use custom leading if provided
+      actionsPadding: EdgeInsets.symmetric(horizontal: 10.w),
+
+      leading:
+          leading ?? // Use custom leading if provided
           ((showBackButton ?? true)
               ? IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.black, size: 22.sp),
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                    size: 22.sp,
+                  ),
                   onPressed: onBack ?? () => Navigator.of(context).pop(),
                 )
               : null),

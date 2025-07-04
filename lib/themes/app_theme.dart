@@ -6,10 +6,10 @@ class AppTheme {
     brightness: Brightness.light,
     scaffoldBackgroundColor: veryLightGray,
 
-    // appBarTheme: const AppBarTheme(
-    //   backgroundColor: primaryColor,
-    //   foregroundColor: Colors.white,
-    // ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: pureWhite,
+      //  foregroundColor: Colors.white,
+    ),
     textTheme: const TextTheme(bodyMedium: TextStyle(color: Colors.black)),
   );
 

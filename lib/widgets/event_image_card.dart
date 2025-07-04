@@ -3,23 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:click_click/utils/colors.dart'; // Make sure mutedGray is defined here
 
 class EventCard extends StatelessWidget {
-  final String title;
-  final String location;
-  final String date;
-  final String month;
+  final String? title;
+  final String? location;
+  final String? date;
+  final String? month;
 
   const EventCard({
     super.key,
-    this.title = "Seraton Food Explore Event",
-    this.location = "Town Hall Islington London",
-    this.date = "30",
-    this.month = "Dec",
+    this.title,
+    this.location,
+    this.date,
+    this.month,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1.sw * 0.85, // 85% of screen width
+      width: 1.sw * 0.99, // 99% of screen width
       height: 276.h,
       margin: EdgeInsets.symmetric(vertical: 10.h),
       decoration: BoxDecoration(
@@ -28,8 +28,8 @@ class EventCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black12,
-            blurRadius: 6.r,
-            offset: Offset(0, 2.h),
+            blurRadius: 1.r,
+            // offset: Offset(0, 2.h),
           ),
         ],
       ),
@@ -62,7 +62,7 @@ class EventCard extends StatelessWidget {
                   width: 48.w,
                   height: 64.h,
                   decoration: BoxDecoration(
-                    color: Colors.yellow[700],
+                    color: yellow,
                     borderRadius: BorderRadius.vertical(
                       bottom: Radius.circular(24.r), // Full curve at bottom
                     ),
@@ -71,7 +71,7 @@ class EventCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        date,
+                        date ?? "",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.sp,
@@ -79,7 +79,7 @@ class EventCard extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        month,
+                        month ?? "",
                         style: TextStyle(fontSize: 12.sp, color: Colors.black),
                       ),
                     ],
@@ -96,7 +96,7 @@ class EventCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  title ?? "",
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.start,
@@ -109,7 +109,7 @@ class EventCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      location,
+                      location ?? "",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.start,
                       style: TextStyle(
@@ -117,7 +117,7 @@ class EventCard extends StatelessWidget {
                         fontSize: 12.sp,
                       ),
                     ),
-                    SizedBox(width: 55.w),
+                    Spacer(),
                     Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 12.w,
@@ -133,8 +133,8 @@ class EventCard extends StatelessWidget {
                         // Removed explicit border as it appears to be part of the background color in the image.
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(
-                              0.03,
+                            color: Colors.black.withValues(
+                              alpha: 0.03,
                             ), // Very subtle shadow
                             spreadRadius: 0,
                             blurRadius: 3,
@@ -147,14 +147,14 @@ class EventCard extends StatelessWidget {
                             .min, // Make the row only take up needed space
                         children: [
                           Text(
-                            'Going',
+                            'Following',
                             style: TextStyle(
                               color: primaryBlue, // Blue text color
-                              fontSize: 14.sp,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          SizedBox(width: 4.w), // Space between text and icon
+                          SizedBox(width: 2.w), // Space between text and icon
                           Icon(
                             Icons.keyboard_arrow_down, // Down arrow icon
                             color: primaryBlue, // Blue icon color
