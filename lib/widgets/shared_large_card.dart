@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:click_click/utils/colors.dart'; // Make sure mutedGray is defined here
 
-class EventCard extends StatelessWidget {
+class SharedLargeCard extends StatelessWidget {
   final String? title;
   final String? location;
   final String? date;
   final String? month;
   final String? imageUrl;
   final Function()? onTap;
-  const EventCard({
+  const SharedLargeCard({
     super.key,
     this.title,
     this.location,

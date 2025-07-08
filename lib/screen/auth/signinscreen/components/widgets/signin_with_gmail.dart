@@ -1,6 +1,6 @@
 import 'package:click_click/utils/colors.dart';
-import 'package:click_click/widgets/custom_button.dart';
-import 'package:click_click/widgets/custom_textfiels.dart';
+import 'package:click_click/widgets/shared_button.dart';
+import 'package:click_click/widgets/shared_textfiels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -38,7 +38,7 @@ class _SigninWithGmailScreenState extends State<SigninWithGmailScreen> {
               SizedBox(height: 40.h), // Spacing before text fields
               
               // Phone Number Text Field
-              CustomTextFormField(
+              SharedTextField(
                 hintText: 'Enter Phone Number', // Hint text
                 keyboardType: TextInputType.phone,
                 prefixIcon: const Icon(Icons.arrow_drop_down), // Dropdown icon
@@ -48,7 +48,7 @@ class _SigninWithGmailScreenState extends State<SigninWithGmailScreen> {
 
               SizedBox(height: 30.h), // Spacing before sign in button
               // Sign in button
-              const SignInButton(), // Custom button
+              const Shared_Button(), // Custom button
 
               SizedBox(height: 20.h), // Spacing after sign in button
               // "Already have not an account?" and "Sing up !"

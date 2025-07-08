@@ -1,13 +1,13 @@
 import 'package:click_click/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class SectionHeader extends StatelessWidget {
+class SharedTitle extends StatelessWidget {
   final String? title;
   final String? actionText;
   final VoidCallback? onActionTap;
   final bool isVisible;
 
-  const SectionHeader({
+  const SharedTitle({
     super.key,
     this.title,
     this.actionText,

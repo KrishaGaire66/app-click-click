@@ -1,6 +1,6 @@
 import 'package:click_click/export.dart';
 
-class OtherImageCard extends StatelessWidget {
+class SmallShareCard extends StatelessWidget {
   // It's good practice to make properties for dynamic data
   final String eventName;
   final String location;
@@ -8,7 +8,7 @@ class OtherImageCard extends StatelessWidget {
   final String? imageUrl;
   final Function? onTap; // Optional image URL
 
-  const OtherImageCard({
+  const SmallShareCard({
     Key? key,
     required this.eventName,
     required this.location,

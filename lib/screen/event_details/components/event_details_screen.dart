@@ -13,9 +13,9 @@ class _EventDetailsScreenState extends State<EventDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: SharedAppBar(
         title: 'Home',
-        leading: Icon(Icons.menu),
+        leading: Icon(Icons.arrow_back),
         actions: [
           Icon(Icons.search),
           SizedBox(width: 10),
@@ -57,7 +57,7 @@ class _EventDetailsScreenState extends State<EventDetailsScreen> {
                 top: 0,
                 left: 0,
                 right: 0,
-                child: EventCard(
+                child: SharedLargeCard(
                   title: "Event",
                   date: "Dec ",
                   location: "Location",

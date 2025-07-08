@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../utils/colors.dart'; // Adjust as needed
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class SharedAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool? centerTitle;
   final bool? showBackButton;
@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final VoidCallback? onBack;
 
-  const CustomAppBar({
+  const SharedAppBar({
     super.key,
     required this.title,
     this.centerTitle = true,

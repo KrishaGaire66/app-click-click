@@ -1,6 +1,6 @@
 import 'package:click_click/utils/colors.dart';
-import 'package:click_click/widgets/custom_button.dart';
-import 'package:click_click/widgets/custom_textfiels.dart';
+import 'package:click_click/widgets/shared_button.dart';
+import 'package:click_click/widgets/shared_textfiels.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,7 +39,7 @@ class _SigninScreenState extends State<SigninScreen> {
               ),
               SizedBox(height: 40.h), // Spacing before text fields
               // Email Text Field
-              const CustomTextFormField(
+              const SharedTextField(
                 hintText: 'johndoe@mail.com', // Hint text
                 keyboardType: TextInputType.emailAddress,
                 prefixIcon: Icon(Icons.mail, color: primaryBlue), // Mail icon
@@ -47,7 +47,7 @@ class _SigninScreenState extends State<SigninScreen> {
               // No need for SizedBox(height: 20.h) here because CustomTextFormField already adds it internally.
 
               // Password Text Field
-              const CustomTextFormField(
+              const SharedTextField(
                 hintText: '***********', // Hint text
                 obscureText: true, // This enables the visibility toggle
                 keyboardType: TextInputType.text,
@@ -105,7 +105,7 @@ class _SigninScreenState extends State<SigninScreen> {
               ),
               SizedBox(height: 30.h), // Spacing before sign in button
               // Sign in button
-              const SignInButton(), // Custom button
+              const Shared_Button(), // Custom button
 
               SizedBox(height: 20.h), // Spacing after sign in button
               // "Already have not an account?"

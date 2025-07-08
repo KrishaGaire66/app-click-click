@@ -1,6 +1,6 @@
 import 'package:click_click/export.dart';
 import 'package:click_click/routes/routes.dart';
-import 'package:click_click/widgets/custome_title.dart';
+import 'package:click_click/widgets/shared_title.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,7 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: SharedAppBar(
         title: 'Home',
         leading: Icon(Icons.menu),
         actions: [Icon(Icons.notifications)],
@@ -41,8 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
               //     ),
               //   ],
               // ),
-              SectionHeader(title: "Features Events", actionText: "View All +"),
-              EventCard(
+              SharedTitle(title: "Features Events", actionText: "View All +"),
+              SharedLargeCard(
                 title: "Event",
                 date: "Dec ",
                 location: "Location",
@@ -51,8 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.pushNamed(context, Routes.eventDetails);
                 },
               ),
-              SectionHeader(title: "Other Events", actionText: "View All +"),
-              OtherImageCard(
+              SharedTitle(title: "Other Events", actionText: "View All +"),
+              SmallShareCard(
                 eventName: "New Year Explore Event",
                 location: "Town Hall New York",
                 dateTime: "Sat,Dec 2020, at 12:00 PM",
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
               SizedBox(height: 8),
-              OtherImageCard(
+              SmallShareCard(
                 eventName: "New Year Explore Event",
                 location: "Town Hall New York",
                 dateTime: "Sat,Dec 2020, at 12:00 PM",
@@ -70,9 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
 
-              SectionHeader(title: "Events You Join"),
+              SharedTitle(title: "Events You Join"),
 
-              OtherImageCard(
+              SmallShareCard(
                 eventName: "New Year Explore Event",
                 location: "Town Hall New York",
                 dateTime: "Sat,Dec 2020, at 12:00 PM",
